@@ -1,0 +1,65 @@
+﻿@model IEnumerable<OneArmoryApp.Models.WorkOrder>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FaultDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weapon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeaponStatusNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkOrderStatusNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FaultDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weapon.WeaponId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeaponStatusNavigation.WeaponStatus1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkOrderStatusNavigation.WorkOrderStatus1)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WorkOrderId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.WorkOrderId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.WorkOrderId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
