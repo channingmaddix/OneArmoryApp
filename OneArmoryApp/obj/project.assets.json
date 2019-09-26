@@ -12948,11 +12948,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maddi\\source\\repos\\OneArmoryApp\\OneArmoryApp.csproj",
+      "projectUniqueName": "C:\\Users\\maddi\\OneDrive\\Documents\\GitHub\\OneArmoryApp\\OneArmoryApp\\OneArmoryApp.csproj",
       "projectName": "OneArmoryApp",
-      "projectPath": "C:\\Users\\maddi\\source\\repos\\OneArmoryApp\\OneArmoryApp.csproj",
+      "projectPath": "C:\\Users\\maddi\\OneDrive\\Documents\\GitHub\\OneArmoryApp\\OneArmoryApp\\OneArmoryApp.csproj",
       "packagesPath": "C:\\Users\\maddi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maddi\\source\\repos\\OneArmoryApp\\obj\\",
+      "outputPath": "C:\\Users\\maddi\\OneDrive\\Documents\\GitHub\\OneArmoryApp\\OneArmoryApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

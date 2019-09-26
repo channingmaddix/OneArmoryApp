@@ -34,7 +34,7 @@ namespace OneArmoryApp
             });
 
             services.AddDbContext<OneArmoryDataContext>();
-
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             

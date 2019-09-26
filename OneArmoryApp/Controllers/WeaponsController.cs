@@ -167,5 +167,31 @@ namespace OneArmoryApp.Controllers
         {
             return _context.Weapon.Any(e => e.WeaponId == id);
         }
+
+        public int ReadinessLevel(string filter)
+        {
+            int numWeapons = 0;
+            int numBrokenWeapons = 0;
+
+            var oneArmoryWeaponDataContext = _context.Weapon.Include
+                (w => w.EquipmentTypeNavigation).Include(w => w.NomenclatureNavigation).
+                Include(w => w.PlatoonNavigation);
+
+            var oneArmoryWorkOrderDataContext = _context.WorkOrder.Include(w => w.Weapon).
+                Include(w => w.WeaponStatusNavigation).
+                Include(w => w.WorkOrderStatusNavigation);
+            foreach (Weapon weapon in oneArmoryWeaponDataContext)
+            {
+                numWeapons++;
+                foreach (WorkOrder workOrder in oneArmoryWorkOrderDataContext)
+                {
+                    if (workOrder.WeaponId == weapon.WeaponId)
+                    {
+                        numBrokenWeapons++;
+                    }
+                }
+            }
+            return (numWeapons - numBrokenWeapons) / numWeapons;
+        }
     }
 }

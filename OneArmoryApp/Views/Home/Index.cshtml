@@ -1,12 +1,68 @@
-﻿@{
+﻿@model OneArmoryApp.Models.WeaponReadiness
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="row">
+        <div class="col-1"></div>
 
-<div>
-    @Html.ActionLink("List of weapons", "Index", "Weapons")
-</div>
+        <div class="col-10">
+            
+            <div class="text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <form method="post" action="/Home/Index">
+                            @foreach (var item in ViewBag.AllFilters)
+                            {
+                                <label><input type="checkbox" name="filters" value="@item.Nomenclature" checked />@item.Nomenclature</label>
+                            }
+                            <input class="btn btn-primary" type="submit" />
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Apache Company</h1>
+                    </div>
+                </div>
+                @foreach (var item in ViewBag.Weapons)
+                {
+                    <div class="row">
+                        <div class="col-1 mr-3">
+                        
+                            <h4 class="mb-4 align-top">@item.Nomenclature</h4>
+                        
+                        </div>
+                        <div class="col-10">
+
+                                <div class="w3-light-grey w3-round-xlarge mb-4">
+                                    <div class="w3-padding w3-round-xlarge
+                                        @if (item.ReadinessLevel <= 50)
+                                        {
+                                            @Html.Raw("w3-red");
+                                        }
+                                        else if (item.ReadinessLevel > 50 && item.ReadinessLevel < 80)
+                                        {
+                                            @Html.Raw("w3-yellow");
+                                        }
+                                        else
+                                        {
+                                            @Html.Raw("w3-green");
+                                        }
+                                        w3 -round w3-center" style="width:@item.ReadinessLevel%">
+                                        @item.ReadinessLevel%
+                                    </div>
+                                </div>
+                        
+
+                        </div>
+                    
+                    </div>
+                 }
+
+
+            </div>
+        </div>
+    </div>

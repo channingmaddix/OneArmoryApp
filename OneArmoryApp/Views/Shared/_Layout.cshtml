@@ -13,9 +13,19 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
               crossorigin="anonymous"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap" rel="stylesheet">
+    <style>
+        .black {
+            background: black;
+        }
+        body {
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -40,10 +50,24 @@
         </nav>
     </header>
     <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        <div class="row">
+            <div class="col-1 border-right-5 border-left-0">
+                <div class="mb-3">
+                    <a asp-area="" asp-controller="Weapons" asp-action="Index" class=""><img src="~/musket.png" width="75" alt="Weapons"/></a>
+                </div>
+                <div class="mb-3">
+                    <a asp-area="" asp-controller="Soldiers" asp-action="Index" class=""><img src="~/person.png" width="75" alt="Soldiers" /></a>
+                </div>
+                <div class="mb-3">
+                    <a asp-area="" asp-controller="WorkOrders" asp-action="Index" class=""><img src="~/books.png" width="75" alt="Work Orders" /></a>
+                </div>
+                
+            </div>
+            <div class="border-left-5 col-11">
+                <partial name="_CookieConsentPartial" class="border-left-5 col-11"/>
+                <div class="border-left-5 col-11">@RenderBody()</div>
+            </div>
+        </div>
     </div>
 
     <footer class="border-top footer text-muted">
