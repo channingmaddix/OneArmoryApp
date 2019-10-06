@@ -1,5 +1,27 @@
 # OneArmoryApp
-Contains the models, views, and controllers for the ASP.NET Core OneArmory application.
+One Armory is designed to give Army company commanders and armorers the ability to better track armory weapon readiness and maintenance.
+The first page the user is brought is focused on giving the commander a snapshot of the readiness level of his/her armory. 
+
+Current functionality allows for:
+
+-CRUDing of weapons, soldiers, and work orders
+
+-Home page filtering of weapon readiness levels based on:
+
+    +weapon type
+    +platoon
+    
+
+Future functionality will include:
+
+-Single role authentication
+
+-Time and user stamped records of changes
+
+-Tracking of equipment signed out to soldiers
+
+-Autofilling and printing of workorders and fhand receipts
+
 
 Requirements:
 ---
